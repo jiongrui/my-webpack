@@ -9,7 +9,8 @@ module.exports = merge(baseConfig, {
   devServer: {
     hot: true,
     contentBase: "/dist",
-    publicPath: "/"
+    publicPath: "/",
+    stats: "errors-only"
   },
   // devtool: "source-map",
   // module: {},

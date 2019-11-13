@@ -7,5 +7,6 @@ module.exports = merge(baseConfig, {
   module: {
     rules: []
   },
-  plugins: [new CleanWebpackPlugin()]
+  plugins: [new CleanWebpackPlugin()],
+  stats: "errors-only"
 });
