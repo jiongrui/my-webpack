@@ -5,7 +5,9 @@ const baseConfig = require("./webpack.base");
 
 module.exports = merge(baseConfig, {
   mode: "development",
-
+  output: {
+    publicPath: "/"
+  },
   devServer: {
     hot: true,
     contentBase: "/dist",
