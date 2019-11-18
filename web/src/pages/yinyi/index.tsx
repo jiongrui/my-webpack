@@ -2,21 +2,20 @@ import React, { useState, useEffect } from "react";
 
 const YinYi: React.FC<any> = () => {
   const [imgList, setImgList] = useState([]);
-  // const imgList: string[] = [];
   useEffect(() => {
-    const defaultUrl = "../../assets/images/loading.gif";
     const imgList: any = [];
     for (let i = 1; i <= 22; i++) {
-      imgList.push(defaultUrl);
-      const url = `../../assets/images/zuopin${i}.jpg`;
-      // const img = document.createElement("img");
-      // img.src = url;
-      // img.onload = () => {
-      //   console.log(url);
-      //   // imgList.splice(i, 1, url);
-      // };
+      imgList.push("./static/images/loading.gif");
+      const url = `./static/images/zuopin${i}.jpg`;
+      const img = document.createElement("img");
+      img.src = url;
+      console.time(`what${i}`);
+      img.onload = () => {
+        imgList.splice(i - 1, 1, url);
+        setImgList(imgList);
+        console.timeEnd(`what${i}`);
+      };
     }
-    console.log(imgList);
     setImgList(imgList);
   }, ["imgList"]);
 
